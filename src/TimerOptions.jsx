@@ -5,21 +5,20 @@ import ClockOptions from "./ClockOptions";
 const TimerOptions = ({ name, duration, incDecDuration }) => {
   return (
     <div id={name}>
-      {name.replace("-", " ").toUpperCase()}
-      <div>
+      {name.split("-")[0].toUpperCase()}
+      <div className="incdecbtn">
         <IncDecButton
           name={name.split("-")[0] + "-increment"}
           incDecDuration={incDecDuration}
+          sign={"+"}
         />
         <IncDecButton
           name={name.split("-")[0] + "-decrement"}
           incDecDuration={incDecDuration}
-        />
-        <ClockOptions
-          name={name.split("-")[0] + "-length"}
-          duration={duration}
+          sign={"-"}
         />
       </div>
+      <ClockOptions name={name.split("-")[0] + "-length"} duration={duration} />
     </div>
   );
 };

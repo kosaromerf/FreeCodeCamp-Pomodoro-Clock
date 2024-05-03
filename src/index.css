@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    background-color: #0a0a23;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#container {
+    height: 40vh;
+    min-height: 400px;
+    width: 40vw;
+    min-width: 350px;
+    border: 3px solid gray;
+    border-radius: 30px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#container h1 {
+    color: whitesmoke;
+    margin-bottom: 20px;
+}
+
+#timer-options {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+#session-label,
+#break-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: azure;
+    font-size: 1.3rem;
+
+}
+
+.incdecbtn {
+    display: flex;
+}
+
+.incdecbtn button {
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+#timer-container {
+    margin-top: 15px;
+    padding: 20px;
+    height: 150px;
+    width: 100%;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+#timer-label {
+    font-size: 1.5rem;
+    color: gray;
+}
+
+#time-left {
+    font-size: 3rem;
+    color: darkgoldenrod;
+}
+
+#ctrlbtn {
+    display: flex;
+
+    width: 100%;
+    margin-top: 25px;
+    justify-content: space-evenly;
+}
+
+#ctrlbtn button {
+    width: 110px;
+    padding: 5px;
+    font-size: 1.1rem;
+    border-radius: 20px;
+    border: 0px;
+}
+
+#reset {
+    background-color: red;
+    color: white
+}
+
+#start_stop {
+    background-color: green;
+    color: white
+}

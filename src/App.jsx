@@ -110,7 +110,7 @@ function App() {
               startTimer("session");
             }
           } else {
-            setCountDown([countDown[0] - 1, 2, countDown[2]]);
+            setCountDown([countDown[0] - 1, 59, countDown[2]]);
           }
         } else {
           setCountDown([countDown[0], countDown[1] - 1, countDown[2]]);
@@ -122,7 +122,7 @@ function App() {
   }, [countDown, running]);
 
   return (
-    <div>
+    <div id="container">
       <h1>Pomodoro Timer</h1>
       <div id="timer-options">
         <TimerOptions
@@ -137,7 +137,7 @@ function App() {
         />
       </div>
       <Timer countDown={countDown} />
-      <div>
+      <div id="ctrlbtn">
         <ControlButton
           name="start_stop"
           startTimer={startTimer}

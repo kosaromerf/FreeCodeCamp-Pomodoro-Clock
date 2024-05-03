@@ -2,8 +2,8 @@ import React from "react";
 
 const Timer = ({ countDown }) => {
   return (
-    <div>
-      <h3 id="timer-label">{countDown[2]}</h3>
+    <div id="timer-container">
+      <h3 id="timer-label">{countDown[2].toUpperCase()}</h3>
       <h2 id="time-left">
         {(countDown[0] >= 10 ? countDown[0] : "0" + countDown[0]) +
           ":" +
