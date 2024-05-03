@@ -10,6 +10,8 @@ function App() {
   const [running, setRunning] = useState(false);
   const [remaining, setRemaining] = useState([25, 0, "session"]);
 
+  const audioElement = document.getElementById("beep");
+
   const incDecDuration = (target) => {
     switch (target.id) {
       case "session-increment":
@@ -64,6 +66,8 @@ function App() {
     setCountDown([25, 0, "session"]);
     setDurations([25, 5]);
     setRemaining([25, 0, "session"]);
+    audioElement.pause();
+    audioElement.currentTime = 0;
   };
 
   const startTimer = (status) => {
@@ -98,9 +102,11 @@ function App() {
           if (countDown[0] === 0) {
             if (countDown[2] === "session") {
               console.log("session end");
+              audioElement.play();
               startTimer("break");
             } else {
               console.log("break end");
+              audioElement.play();
               startTimer("session");
             }
           } else {
@@ -139,6 +145,11 @@ function App() {
         />
         <ResetButton name="reset" resetTimer={resetTimer} />
       </div>
+      <audio
+        id="beep"
+        preload="auto"
+        src="https://cdn.freecodecamp.org/testable-projects-fcc/audio/BeepSound.wav"
+      ></audio>
     </div>
   );
 }
